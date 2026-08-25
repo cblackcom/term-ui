@@ -1,5 +1,5 @@
-import styled, { CSSObject } from "@emotion/styled"
-import { ReactNode } from "react"
+import styled, { type CSSObject } from "@emotion/styled"
+import type { ReactNode } from "react"
 import { TermUiColorVar } from "../../globalStyle"
 import { L1Button } from "../buttons/L1Button"
 

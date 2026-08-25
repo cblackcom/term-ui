@@ -1,4 +1,4 @@
-import { CSSObject } from "@emotion/react";
+import { type CSSObject } from "@emotion/react"
 
 export enum TermUiBreakpoint {
 	TabletMinWidth = '720px',

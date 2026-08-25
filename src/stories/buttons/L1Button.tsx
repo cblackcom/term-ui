@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 import { L1UnstyledButton } from "./L1UnstyledButton"
-import { IconProp } from "@fortawesome/fontawesome-svg-core"
+import type { IconProp } from "@fortawesome/fontawesome-svg-core"
 import type { ButtonHTMLAttributes } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { TermUiColorVar } from "../../globalStyle"

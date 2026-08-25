@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 import { TermUiBreakpoint, TermUiColorVar } from "../../globalStyle"
-import { ReactNode } from "react"
+import type { ReactNode } from "react"
 
 const L3ScreenStatusRoot = styled.div({
 	background: TermUiColorVar.Orange08,
