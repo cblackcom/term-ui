@@ -24,11 +24,12 @@ export interface L1ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	icon?: IconProp
 }
 
-export const L1Button = ({ title, icon, ...props }: L1ButtonProps) => {
+export const L1Button = ({ title, icon, children, ...props }: L1ButtonProps) => {
 	return (
 		<Button hasTitle={Boolean(title)} {...props}>
 			{icon ? <FontAwesomeIcon icon={icon} /> : null}
 			{title}
+			{children}
 		</Button>
 	)
 }
