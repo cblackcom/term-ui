@@ -4,8 +4,16 @@ export enum TermUiBreakpoint {
 	TabletMinWidth = '720px',
 }
 
+export enum TermUiColorVar {
+	Transparent = 'var(--termui-color-transparent)',
+	ScreenBg = 'var(--termui-color-screen-bg)',
+	Orange = 'var(--termui-color-orange)',
+	Orange08 = 'var(--termui-color-orange08)',
+}
+
 export const termUiGlobalStyle: CSSObject = {
 	':root': {
+		'--termui-color-transparent': 'transparent',
 		'--termui-color-screen-bg': '#1d1d1d',
 		'--termui-color-orange': 'rgba(253, 106, 0, 1)',
 		'--termui-color-orange08': 'rgba(253, 106, 0, 0.08)',

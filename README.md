@@ -6,6 +6,10 @@ Prototype UI component library.  License MIT.
 
 ## Internal
 
+### Designs
+
+See "Wave" in PNDLM Design Figma account.
+
 ### Development
 
 ```sh

@@ -1,9 +1,9 @@
 import styled from "@emotion/styled"
-import { TermUiBreakpoint } from "../../globalStyle"
+import { TermUiBreakpoint, TermUiColorVar } from "../../globalStyle"
 import { ReactNode } from "react"
 
 const L3ScreenStatusRoot = styled.div({
-	background: "var(--termui-color-orange08)",
+	background: TermUiColorVar.Orange08,
 	display: "flex",
 	flexDirection: "row",
 	alignItems: "center",

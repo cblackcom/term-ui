@@ -3,9 +3,10 @@ import { L1UnstyledButton } from "./L1UnstyledButton"
 import { IconProp } from "@fortawesome/fontawesome-svg-core"
 import type { ButtonHTMLAttributes } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { TermUiColorVar } from "../../globalStyle"
 
 const Button = styled(L1UnstyledButton)<{hasTitle: boolean}>(({hasTitle}) => ({
-	border: '1px solid var(--termui-color-orange)',
+	border: `1px solid ${TermUiColorVar.Orange}`,
 	borderRadius: 'var(--termui-radius)',
 	fontSize: `${14/16}rem`,
 	fontWeight: 500,

@@ -1,16 +1,24 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import { L3Box as Component } from "./L3Box"
+import { L3Box as Component, L3BoxContentBackgroundColorOptions } from "./L3Box"
 import { L1Button } from "../buttons/L1Button"
+import { TermUiColorVar } from "../../globalStyle"
 
 const meta: Meta<typeof Component> = {
 	title: "Components/Box/L3Box",
 	component: Component,
+	argTypes: {
+		backgroundColor: {
+			control: 'select',
+			options: L3BoxContentBackgroundColorOptions,
+		},
+	},
 }
 
 export default meta
 
 export const Acknowledgement: StoryObj<typeof meta> = {
 	args: {
+		backgroundColor: TermUiColorVar.Orange08,
 		title: 'LOREM IPSUM',
 	},
 	render: (args) => (
