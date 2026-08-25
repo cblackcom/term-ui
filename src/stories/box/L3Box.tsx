@@ -26,7 +26,7 @@ export const L3BoxRoot = styled.div<L3BoxRootProps>(({size}) => {
 		case L3BoxSize.Small:
 			return {
 				...style,
-				maxWidth: '25rem',
+				maxWidth: '26rem',
 			}
 		case L3BoxSize.Medium:
 			return {
@@ -44,7 +44,7 @@ interface L3BoxContentProps {
 
 export const L3BoxContent = styled.div<L3BoxContentProps>(({backgroundColor = TermUiColorVar.Orange08}) => ({
 	backgroundColor,
-	padding: '1rem',
+	padding: '1.5rem 1rem',
 }))
 
 export const L3BoxTitle = styled.div({
@@ -55,7 +55,7 @@ export const L3BoxTitle = styled.div({
     padding: '0.25rem 0.5rem 1px',
 })
 
-interface L3BoxProps {
+export interface L3BoxProps {
 	size?: L3BoxRootProps["size"]
 	backgroundColor?: L3BoxContentProps["backgroundColor"]
 	children?: ReactNode

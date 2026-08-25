@@ -6,6 +6,7 @@ export enum TermUiBreakpoint {
 
 export enum TermUiColorVar {
 	Transparent = 'var(--termui-color-transparent)',
+	White = 'var(--termui-color-white)',
 	ScreenBg = 'var(--termui-color-screen-bg)',
 	Orange = 'var(--termui-color-orange)',
 	Orange08 = 'var(--termui-color-orange08)',
@@ -14,6 +15,7 @@ export enum TermUiColorVar {
 export const termUiGlobalStyle: CSSObject = {
 	':root': {
 		'--termui-color-transparent': 'transparent',
+		'--termui-color-white': 'white',
 		'--termui-color-screen-bg': '#1d1d1d',
 		'--termui-color-orange': 'rgba(253, 106, 0, 1)',
 		'--termui-color-orange08': 'rgba(253, 106, 0, 0.08)',
@@ -38,6 +40,12 @@ export const termUiGlobalStyle: CSSObject = {
 		color: 'var(--termui-color-orange)',
 		fontFamily: '"IBM Plex Mono", monospace',
 		fontWeight: 400,
+		fontStyle: 'normal',
+		fontSize: `${14/16}rem`,
+	},
+	'input': {
+		fontFamily: '"IBM Plex Mono", monospace',
+		fontWeight: 500,
 		fontStyle: 'normal',
 		fontSize: `${14/16}rem`,
 	},

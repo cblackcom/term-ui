@@ -5,12 +5,17 @@ import type { ButtonHTMLAttributes } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { TermUiColorVar } from "../../globalStyle"
 
-const Button = styled(L1UnstyledButton)<{hasTitle: boolean}>(({hasTitle}) => ({
+export enum L1ButtonSize {
+	None = 'none',
+	MinSmall = 'minSmall',
+}
+
+const Button = styled(L1UnstyledButton)<{size: L1ButtonSize}>(({size}) => ({
 	border: `1px solid ${TermUiColorVar.Orange}`,
 	borderRadius: 'var(--termui-radius)',
 	fontSize: `${14/16}rem`,
 	fontWeight: 500,
-	minWidth: hasTitle ? '128px' : 'auto',
+	minWidth: (size === L1ButtonSize.MinSmall) ? '8rem' : 'auto',
 	padding: '0.5rem',
 	display: 'inline-flex',
 	flexDirection: 'row',
@@ -20,13 +25,22 @@ const Button = styled(L1UnstyledButton)<{hasTitle: boolean}>(({hasTitle}) => ({
 }))
 
 export interface L1ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+	size?: L1ButtonSize
 	title?: string
 	icon?: IconProp
 }
 
-export const L1Button = ({ title, icon, children, ...props }: L1ButtonProps) => {
+export const L1Button = ({ size, title, icon, children, ...props }: L1ButtonProps) => {
+	// default sizes
+	if(size === undefined) {
+		if(icon && !title && !children) {
+			size = L1ButtonSize.None
+		} else {
+			size = L1ButtonSize.MinSmall
+		}
+	}
 	return (
-		<Button hasTitle={Boolean(title)} {...props}>
+		<Button size={size} {...props}>
 			{icon ? <FontAwesomeIcon icon={icon} /> : null}
 			{title}
 			{children}
