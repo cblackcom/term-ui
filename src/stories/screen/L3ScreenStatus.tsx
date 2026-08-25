@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 import { TermUiBreakpoint } from "../../globalStyle"
-import { L1ScreenStatusLogoCBlack, L1ScreenStatusLogoPNDLM } from "./L1ScreenStatusLogo"
+import { ReactNode } from "react"
 
 const L3ScreenStatusRoot = styled.div({
 	background: "var(--termui-color-orange08)",
@@ -16,31 +16,15 @@ const L3ScreenStatusRoot = styled.div({
 	fontWeight: 500,
 })
 
-export enum L3ScreenStatusLogos {
-	CBlack = 'CBlack',
-	PNDLM = 'PNDLM',
-}
-
 interface L3ScreenStatusProps {
-	logos?: L3ScreenStatusLogos[]
+	children?: ReactNode
 	title?: string
 }
 
-export const L3ScreenStatus = ({logos, title}: L3ScreenStatusProps) => {
+export const L3ScreenStatus = ({children, title}: L3ScreenStatusProps) => {
 	return (
 		<L3ScreenStatusRoot>
-			{logos?.map(logo => {
-				switch(logo) {
-					case L3ScreenStatusLogos.CBlack:
-						return (
-							<L1ScreenStatusLogoCBlack />
-						)
-					case L3ScreenStatusLogos.PNDLM:
-						return (
-							<L1ScreenStatusLogoPNDLM />
-						)
-				}
-			})}
+			{children}
 			{title ? <div>{title}</div> : null}
 		</L3ScreenStatusRoot>
 	)

@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import { L3ScreenStatus as Component, L3ScreenStatusLogos } from "./L3ScreenStatus"
+import { L3ScreenStatus as Component } from "./L3ScreenStatus"
+import { L1ScreenStatusLogoCBlack, L1ScreenStatusLogoPNDLM } from "./L1ScreenStatusLogo"
 
 const meta: Meta<typeof Component> = {
 	title: "Components/Screen/L3ScreenStatus",
@@ -9,14 +10,12 @@ const meta: Meta<typeof Component> = {
 export default meta
 
 export const Landing: StoryObj<typeof meta> = {
-	args: {
-		logos: [L3ScreenStatusLogos.CBlack, L3ScreenStatusLogos.PNDLM],
-	},
+	render: () => <Component><L1ScreenStatusLogoCBlack /><L1ScreenStatusLogoPNDLM /></Component>
 }
 
 export const LoremIpsum: StoryObj<typeof meta> = {
 	args: {
-		logos: [L3ScreenStatusLogos.PNDLM],
 		title: 'LOREM IPSUM',
 	},
+	render: (args) => <Component {...args}><L1ScreenStatusLogoPNDLM /></Component> 
 }

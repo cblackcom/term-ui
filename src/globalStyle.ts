@@ -18,15 +18,20 @@ export const termUiGlobalStyle: CSSObject = {
 			'--termui-color-orange08': 'color(display-p3 0.992 0.416 0.000 / 0.08)',
 		},
 	},
-	'body': {
+	'body, #root, #reactroot': {
 		margin: 0,
+		padding: 0,
+		width: '100vw',
 		height: '100vh',
 		overflow: 'hidden',
 		background: 'var(--termui-color-screen-bg)',
+	},
+	'body > *': {
 		color: 'var(--termui-color-orange)',
 		fontFamily: '"IBM Plex Mono", monospace',
 		fontWeight: 400,
 		fontStyle: 'normal',
+		fontSize: `${14/16}rem`,
 	},
 	'a': {
 		color: 'inherit',
