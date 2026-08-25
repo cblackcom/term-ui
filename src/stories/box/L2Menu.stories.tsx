@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { L2Menu as Component } from "./L2Menu"
-import { L3Box } from "./L3Box"
+import { L3Box, L3BoxSize } from "./L3Box"
 import { L1Button } from "../buttons/L1Button"
 
 const meta: Meta<typeof Component> = {
@@ -11,9 +11,6 @@ const meta: Meta<typeof Component> = {
 export default meta
 
 export const L2Menu: StoryObj<typeof meta> = {
-	args: {
-		title: 'MENU',
-	},
 	render: (args) => (
 		<Component {...args}>
 			<L1Button>[1] LOREM IPSUM</L1Button>
@@ -24,11 +21,11 @@ export const L2Menu: StoryObj<typeof meta> = {
 	),
 	decorators: [
 		(Story) => (
-			<div style={{maxWidth: '25rem'}}>
-				<L3Box title="MENU">
+			// <div style={{maxWidth: '25rem'}}>
+				<L3Box size={L3BoxSize.Small} title="MENU">
 					<Story />
 				</L3Box>
-			</div>
+			// </div>
 		)
 	],
 }

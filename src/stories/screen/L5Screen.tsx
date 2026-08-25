@@ -1,7 +1,8 @@
 import styled from "@emotion/styled"
-import { ReactNode } from "react"
 
-export const L5ScreenRoot = styled.div({
+// container of this component should be 100vw/100vh, no margin or padding
+// see also: #root in globalStyle
+export const L5Screen = styled.div({
 	margin: 0,
 	padding: 0,
 	width: '100vw',
@@ -11,26 +12,14 @@ export const L5ScreenRoot = styled.div({
 	gridTemplateRows: '1fr max-content',
 })
 
-export const ContentSpace = styled.div({
-	overflow: 'auto',
+// default candidate for the first grid space in the above
+export const L4ScreenContentStack = styled.div({
 	padding: '1rem',
-	display: 'flex',
+	overflow: 'auto',
+	display: 'grid',
+	placeItems: 'center',
+	'& > *': {
+		// stack everything in the same cell
+		gridArea: '1 / 1',
+	},
 })
-
-interface L5ScreenProps {
-	children?: ReactNode
-	status?: ReactNode
-}
-
-// use this component to lay out the (majority) content space where boxes go
-// vs. the bottom status bar
-// container of this component should be 100vw/100vh, no margin or padding
-// see also: #root in globalStyle
-export const L5Screen = ({children, status}: L5ScreenProps) => {
-	return (
-		<L5ScreenRoot>
-			<ContentSpace>{children}</ContentSpace>
-			{status}
-		</L5ScreenRoot>
-	)
-}
