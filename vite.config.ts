@@ -4,6 +4,9 @@ import react from "@vitejs/plugin-react"
 import dts from "vite-plugin-dts"
 
 export default defineConfig({
+	define: {
+		φ: ((1 + Math.sqrt(5)) / 2),
+	},
 	plugins: [
 		react(),
 		dts({
