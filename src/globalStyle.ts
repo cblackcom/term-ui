@@ -1,5 +1,9 @@
 import { CSSObject } from "@emotion/react";
 
+export enum TermUiBreakpoint {
+	TabletMinWidth = '720px',
+}
+
 export const termUiGlobalStyle: CSSObject = {
 	':root': {
 		'--termui-color-screen-bg': '#1d1d1d',
