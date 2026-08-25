@@ -11,7 +11,7 @@ const Button = styled(L1UnstyledButton)<{hasTitle: boolean}>(({hasTitle}) => ({
 	fontWeight: 500,
 	minWidth: hasTitle ? '128px' : 'auto',
 	padding: '0.5rem',
-	display: 'flex',
+	display: 'inline-flex',
 	flexDirection: 'row',
 	justifyContent: 'center',
 	alignItems: 'center',
