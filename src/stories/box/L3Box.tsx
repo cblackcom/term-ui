@@ -11,6 +11,7 @@ interface L3BoxRootProps {
 
 export const L3BoxRoot = styled.div<L3BoxRootProps>(({size = L3BoxSize.Medium}) => {
 	let style: CSSObject = {
+		boxSizing: 'border-box',
 		border: "1px solid var(--termui-color-orange)",
 		borderRadius: "var(--termui-radius)",
 		display: "grid",
@@ -20,12 +21,12 @@ export const L3BoxRoot = styled.div<L3BoxRootProps>(({size = L3BoxSize.Medium}) 
 		case L3BoxSize.Small:
 			return {
 				...style,
-				maxWidth: '26rem',
+				width: 'min(26rem, 100%)',
 			}
 		case L3BoxSize.Medium:
 			return {
 				...style,
-				maxWidth: '40rem',
+				width: 'min(40rem, 100%)',
 			}
 	}
 })
