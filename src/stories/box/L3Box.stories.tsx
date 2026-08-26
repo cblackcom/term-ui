@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import { L3Box as Component, L3BoxContentBackgroundColorOptions, L3BoxSize, L3FpoBox } from "./L3Box"
+import { L3Box as Component, L3FpoBox } from "./L3Box"
+import { L3BoxContentBackgroundColorOptions, L3BoxSize } from "./L3Box.constants"
 import { TermUiColorVar } from "../../globalStyle"
 
 const meta: Meta<typeof Component> = {
@@ -28,11 +29,4 @@ export const Acknowledgement: StoryObj<typeof meta> = {
 	render: (args) => (
 		<L3FpoBox {...args} />
 	),
-	// decorators: [
-	// 	(Story) => (
-	// 		<div style={{maxWidth: '40rem'}}>
-	// 			<Story />
-	// 		</div>
-	// 	)
-	// ],
 }

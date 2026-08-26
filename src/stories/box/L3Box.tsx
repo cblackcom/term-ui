@@ -2,14 +2,8 @@ import styled, { type CSSObject } from "@emotion/styled"
 import type { ReactNode } from "react"
 import { TermUiColorVar } from "../../globalStyle"
 import { L1Button } from "../buttons/L1Button"
-
-// TODO is this really the right approach ??
-export enum L3BoxSize {
-	Small = 'small',
-	Medium = 'medium',
-}
-
-export const L3BoxSizeOptions = [L3BoxSize.Small, L3BoxSize.Medium] as const
+import { L2BoxBottomButtonRow } from "./L2BoxButtonRow"
+import { L3BoxSize, L3BoxContentBackgroundColorOptions } from "./L3Box.constants"
 
 interface L3BoxRootProps {
 	size: L3BoxSize
@@ -36,15 +30,16 @@ export const L3BoxRoot = styled.div<L3BoxRootProps>(({size}) => {
 	}
 })
 
-export const L3BoxContentBackgroundColorOptions = [TermUiColorVar.Transparent, TermUiColorVar.Orange08] as const
-
 interface L3BoxContentProps {
 	backgroundColor?: typeof L3BoxContentBackgroundColorOptions[number]
 }
 
 export const L3BoxContent = styled.div<L3BoxContentProps>(({backgroundColor = TermUiColorVar.Orange08}) => ({
 	backgroundColor,
-	padding: '1.5rem 1rem',
+	padding: '1rem 1rem 1.5rem',
+	display: 'flex',
+	flexDirection: 'column',
+	rowGap: '1rem',
 }))
 
 export const L3BoxTitle = styled.div({
@@ -83,9 +78,9 @@ export const L3FpoBox = ({size, title = 'LOREM IPSUM', ...props}: L3BoxProps) =>
 				dictumst orci aenean eu facilisis ut volutpat commodo senectus
 				purus himenaeos fames primis convallis nisi.
 			</div>
-			<div style={{marginTop: '1rem', textAlign: 'center'}}>
+			<L2BoxBottomButtonRow>
 				<L1Button title="OK" />
-			</div>
+			</L2BoxBottomButtonRow>
 		</L3Box>
 	)
 }

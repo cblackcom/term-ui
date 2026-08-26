@@ -1,9 +1,10 @@
 import styled from "@emotion/styled"
-import { L3Box, L3BoxSize } from "../box/L3Box"
+import { L3Box } from "../box/L3Box"
 import { L1LogoPNDLM } from "../logos/L1Logos"
 import { L1TextInput } from "../inputs/L1TextInput"
 import { L1Button } from "../buttons/L1Button"
 import { useId } from "react"
+import { L3BoxSize } from "../box/L3Box.constants"
 
 const LoginBoxContent = styled.div({
 	display: 'grid',
@@ -21,6 +22,7 @@ const LoginLogo = styled(L1LogoPNDLM)({
 	// width: `${(2-φ)*100}%`,
 	width: '11.5rem',
 	height: 'auto',
+	marginTop: '0.5rem',
 	marginBottom: '1rem',
 })
 
