@@ -53,8 +53,8 @@ export const L2BoxTitle = styled(
 })
 
 interface L3FpoBoxProps {
-	size: L3BoxRootProps["size"]
-	backgroundColor: L2BoxContentProps["backgroundColor"]
+	size?: L3BoxRootProps["size"]
+	backgroundColor?: L2BoxContentProps["backgroundColor"]
 }
 
 export const L3FpoBox = ({size, backgroundColor}: L3FpoBoxProps) => {
