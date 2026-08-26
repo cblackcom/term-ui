@@ -1,11 +1,12 @@
 import { useId } from "react"
 import styled from "@emotion/styled"
 import { L2BoxContent, L2BoxTitle, L3BoxRoot } from "../box/L3Box"
-import { L1LogoPNDLM } from "../logos/L1Logos"
+import { L1LogoPNDLM } from "../misc/L1Logos"
 import { L1TextInput } from "../inputs/L1TextInput"
 import { L1Button } from "../buttons/L1Button"
 import { L3BoxSize } from "../box/L3Box.constants"
 import { L2BoxBottomButtonRow } from "../box/L2BoxButtonRow"
+import { L1Loading } from "../misc/L1Loading"
 
 const LoginBoxContent = styled(L2BoxContent)({
 	rowGap: '1.5rem',
@@ -29,22 +30,54 @@ const Fields = styled.div({
 	},
 })
 
-export const L3LoginBox = () => {
+interface L3LoginBoxProps {
+	loading?: boolean
+	username: string
+	password: string
+	onUsernameChange: React.ChangeEventHandler<HTMLInputElement>
+	onPasswordChange: React.ChangeEventHandler<HTMLInputElement>
+	onSubmitClick: React.MouseEventHandler<HTMLButtonElement>
+}
+
+export const L3LoginBox = ({loading, username, password, onUsernameChange, onPasswordChange, onSubmitClick}: L3LoginBoxProps) => {
 	const usernameId = useId()
 	const passwordId = useId()
 	return (
 		<L3BoxRoot size={L3BoxSize.Small}>
 			<LoginBoxContent>
 				<LoginLogo />
-				<Fields>
-					<label htmlFor={usernameId}>USERNAME</label>
-					<L1TextInput id={usernameId} spellCheck={false} />
-					<label htmlFor={passwordId}>PASSWORD</label>
-					<L1TextInput id={passwordId} type="password" />
-				</Fields>
-				<L2BoxBottomButtonRow>
-					<L1Button>OK</L1Button>
-				</L2BoxBottomButtonRow>
+				{loading ? (
+					<L2BoxBottomButtonRow>
+						<L1Loading />
+					</L2BoxBottomButtonRow>
+				) : (
+					<>
+						<Fields>
+							<label htmlFor={usernameId}>USERNAME</label>
+							<L1TextInput
+								id={usernameId}
+								spellCheck={false}
+								autoComplete="username"
+								required
+								autoFocus
+								value={username}
+								onChange={onUsernameChange}
+							/>
+							<label htmlFor={passwordId}>PASSWORD</label>
+							<L1TextInput
+								id={passwordId}
+								type="password"
+								autoComplete="current-password"
+								required
+								value={password}
+								onChange={onPasswordChange}
+							/>
+						</Fields>
+						<L2BoxBottomButtonRow>
+							<L1Button onClick={onSubmitClick}>LOGIN</L1Button>
+						</L2BoxBottomButtonRow>
+					</>
+				)}
 			</LoginBoxContent>
 			<L2BoxTitle>LOGIN</L2BoxTitle>
 		</L3BoxRoot>

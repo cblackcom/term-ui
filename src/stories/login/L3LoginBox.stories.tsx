@@ -8,4 +8,8 @@ const meta: Meta<typeof Component> = {
 
 export default meta
 
-export const L3LoginBox: StoryObj<typeof meta> = {}
+export const L3LoginBox: StoryObj<typeof meta> = {
+	args: {
+		loading: false,
+	}
+}
