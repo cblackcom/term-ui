@@ -34,14 +34,17 @@ interface L3LoginBoxProps {
 	loading?: boolean
 	username: string
 	password: string
+	totpCode: string
 	onUsernameChange: React.ChangeEventHandler<HTMLInputElement>
 	onPasswordChange: React.ChangeEventHandler<HTMLInputElement>
 	onSubmitClick: React.MouseEventHandler<HTMLButtonElement>
+	onTotpCodeChange: React.ChangeEventHandler<HTMLInputElement>
 }
 
-export const L3LoginBox = ({loading, username, password, onUsernameChange, onPasswordChange, onSubmitClick}: L3LoginBoxProps) => {
+export const L3LoginBox = ({loading, username, password, totpCode, onUsernameChange, onPasswordChange, onTotpCodeChange, onSubmitClick}: L3LoginBoxProps) => {
 	const usernameId = useId()
 	const passwordId = useId()
+	const totpCodeId = useId()
 	return (
 		<L3BoxRoot size={L3BoxSize.Small}>
 			<LoginBoxContent>
@@ -71,6 +74,15 @@ export const L3LoginBox = ({loading, username, password, onUsernameChange, onPas
 								required
 								value={password}
 								onChange={onPasswordChange}
+							/>
+							<label htmlFor={totpCodeId}>CODE</label>
+							<L1TextInput
+								id={totpCodeId}
+								type="text"
+								inputMode="numeric"
+								autoComplete="one-time-code"
+								value={totpCode}
+								onChange={onTotpCodeChange}
 							/>
 						</Fields>
 						<L2BoxBottomButtonRow>

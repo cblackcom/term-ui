@@ -35,4 +35,4 @@ export const L1LogoPNDLM = (props: SVGProps<SVGSVGElement>) => {
 	)
 }
 
-export const L1ScreenStatusLogoPNDLM = (props: SVGProps<SVGSVGElement>) => <L1ScreenStatusLogoCBlack {...props} width={45} height={19} />
+export const L1ScreenStatusLogoPNDLM = (props: SVGProps<SVGSVGElement>) => <L1LogoPNDLM {...props} width={45} height={19} />
