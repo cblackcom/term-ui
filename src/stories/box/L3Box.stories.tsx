@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import { L3Box as Component, L3FpoBox } from "./L3Box"
-import { L3BoxContentBackgroundColorOptions, L3BoxSize } from "./L3Box.constants"
+import { L3FpoBox as Component } from "./L3Box"
+import { L2BoxContentBackgroundColorOptions, L3BoxSize } from "./L3Box.constants"
 import { TermUiColorVar } from "../../globalStyle"
 
 const meta: Meta<typeof Component> = {
-	title: "Components/Box/L3Box",
+	title: "Components/Box/L3FpoBox",
 	component: Component,
 	argTypes: {
 		size: {
@@ -13,7 +13,7 @@ const meta: Meta<typeof Component> = {
 		},
 		backgroundColor: {
 			control: 'select',
-			options: L3BoxContentBackgroundColorOptions,
+			options: L2BoxContentBackgroundColorOptions,
 		},
 	},
 }
@@ -24,9 +24,5 @@ export const Acknowledgement: StoryObj<typeof meta> = {
 	args: {
 		size: L3BoxSize.Medium,
 		backgroundColor: TermUiColorVar.Orange08,
-		title: 'LOREM IPSUM',
 	},
-	render: (args) => (
-		<L3FpoBox {...args} />
-	),
 }

@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { L2Menu as Component } from "./L2Menu"
-import { L3Box } from "./L3Box"
+
 import { L1Button } from "../buttons/L1Button"
 import { L3BoxSize } from "./L3Box.constants"
 import { L2BoxTopButtonRow } from "./L2BoxButtonRow"
 import { faClose } from "@fortawesome/free-solid-svg-icons"
+import { L2BoxContent, L2BoxTitle, L3BoxRoot } from "./L3Box"
 
 const meta: Meta<typeof Component> = {
 	title: "Components/Box/L2Menu",
@@ -27,9 +28,12 @@ export const L2Menu: StoryObj<typeof meta> = {
 	),
 	decorators: [
 		(Story) => (
-			<L3Box size={L3BoxSize.Small} title="MENU">
-				<Story />
-			</L3Box>
+			<L3BoxRoot size={L3BoxSize.Small}>
+				<L2BoxContent>
+					<Story />
+				</L2BoxContent>
+				<L2BoxTitle>MENU</L2BoxTitle>
+			</L3BoxRoot>
 		)
 	],
 }

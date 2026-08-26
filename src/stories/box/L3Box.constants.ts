@@ -11,4 +11,4 @@ export enum L3BoxSize {
 
 export const L3BoxSizeOptions = [L3BoxSize.Small, L3BoxSize.Medium] as const
 
-export const L3BoxContentBackgroundColorOptions = [TermUiColorVar.Transparent, TermUiColorVar.Orange08] as const
+export const L2BoxContentBackgroundColorOptions = [TermUiColorVar.Transparent, TermUiColorVar.Orange08] as const

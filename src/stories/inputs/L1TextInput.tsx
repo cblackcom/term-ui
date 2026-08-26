@@ -3,7 +3,7 @@ import type { InputHTMLAttributes } from "react"
 import { TermUiColorVar } from "../../globalStyle"
 
 export const L1TextInput = styled(
-	(props: InputHTMLAttributes<HTMLInputElement>) => <input type="text" {...props}></input>
+	(props: InputHTMLAttributes<HTMLInputElement>) => <input type="text" {...props} />
 )({
 	backgroundColor: TermUiColorVar.ScreenBg,
 	color: TermUiColorVar.White,
