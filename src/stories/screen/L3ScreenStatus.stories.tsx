@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { L3ScreenStatus as Component } from "./L3ScreenStatus"
-import { L1ScreenStatusLogoCBlack, L1ScreenStatusLogoPNDLM } from "./L1ScreenStatusLogo"
+import { L1ScreenStatusLogoCBlack, L1ScreenStatusLogoPNDLM } from "../logos/L1Logos"
 
 const meta: Meta<typeof Component> = {
 	title: "Components/Screen/L3ScreenStatus",

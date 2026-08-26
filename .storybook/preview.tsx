@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/react-vite'
-import { Global } from '@emotion/react'
+import { Global as EmotionGlobal } from '@emotion/react'
 import { termUiGlobalStyle } from '../src/globalStyle'
 import '@fontsource/ibm-plex-mono'
 
@@ -15,7 +15,7 @@ const preview: Preview = {
 	decorators: [
 		(Story) => (
 			<>
-				<Global styles={termUiGlobalStyle} />
+				<EmotionGlobal styles={termUiGlobalStyle} />
 				<Story />
 			</>
 		),

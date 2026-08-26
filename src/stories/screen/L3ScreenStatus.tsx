@@ -14,6 +14,9 @@ const L3ScreenStatusRoot = styled.div({
 	},
 	fontSize: '1rem',
 	fontWeight: 500,
+	// maintain same height as if L1ScreenStatusLogoCBlack were present
+	boxSizing: "content-box",
+	minHeight: "22px",
 })
 
 interface L3ScreenStatusProps {
