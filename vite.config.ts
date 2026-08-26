@@ -19,7 +19,13 @@ const emitDeclarations = (): Plugin => ({
 			execSync("tsc -p tsconfig.build.json", { stdio: "inherit" })
 		} catch (error) {
 			console.error("[emit-declarations] failed to generate type declarations")
-			throw error
+			// In watch mode, keep the watcher alive so it can recover on the next save
+			// instead of dying on every type error. A one-shot build should still fail
+			// the process so CI catches it.
+			if (!this.meta.watchMode) {
+				throw error
+			}
+			return
 		}
 		console.log(`[emit-declarations] done in ${Date.now() - start}ms`)
 	},
