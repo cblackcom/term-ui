@@ -12,6 +12,16 @@ export enum TermUiColorVar {
 	Orange08 = 'var(--termui-color-orange08)',
 }
 
+// TermUiRawHexColor mirrors the :root values below as plain hex, for
+// consumers that can't resolve a CSS custom property -- e.g. drawing to a
+// <canvas> (a generated QR code, etc.) rather than through normal CSS.
+// sRGB only -- unlike TermUiColorVar, this doesn't get the display-p3
+// upgrade below, since canvas fillStyle doesn't support that color() syntax.
+export const TermUiRawHexColor = {
+	Orange: '#fd6a00',
+	Transparent: '#00000000',
+} as const
+
 export const termUiGlobalStyle: CSSObject = {
 	':root': {
 		'--termui-color-transparent': 'transparent',
