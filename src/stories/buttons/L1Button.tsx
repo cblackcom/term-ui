@@ -22,6 +22,9 @@ const Button = styled(L1UnstyledButton)<{size: L1ButtonSize}>(({size}) => ({
 	justifyContent: 'center',
 	alignItems: 'center',
 	columnGap: '0.5rem',
+	'&:disabled': {
+		opacity: 'var(--termui-opacity-disabled-control)',
+	},
 }))
 
 export interface L1ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

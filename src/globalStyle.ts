@@ -34,6 +34,8 @@ export const termUiGlobalStyle: CSSObject = {
 		// '--termui-color-orange08': 'rgba(253, 106, 0, 0.08)',
 		'--termui-color-orange08': 'rgb(47, 35, 27)',
 		'--termui-radius': '0.25rem',
+		'--termui-opacity-disabled-box': 0.24,
+		'--termui-opacity-disabled-control': 0.4,
 	},
 	'@supports (color: color(display-p3 1 1 1))': {
 		':root': {

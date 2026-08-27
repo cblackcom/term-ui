@@ -21,6 +21,7 @@ export const Add: StoryObj<typeof meta> = {
 	args: {
 		title: 'ADD',
 		icon: faPlus,
+		disabled: false,
 	},
 }
 
@@ -29,12 +30,22 @@ export const NoSizeAdd: StoryObj<typeof meta> = {
 		size: L1ButtonSize.None,
 		title: 'ADD',
 		icon: faPlus,
+		disabled: false,
+	},
+}
+
+export const DisabledAdd: StoryObj<typeof meta> = {
+	args: {
+		title: 'ADD',
+		icon: faPlus,
+		disabled: true,
 	},
 }
 
 export const TrashIcon: StoryObj<typeof meta> = {
 	args: {
 		icon: faTrashAlt,
+		disabled: false,
 	}
 }
 
@@ -42,5 +53,6 @@ export const MinSmallTrashIcon: StoryObj<typeof meta> = {
 	args: {
 		size: L1ButtonSize.MinSmall,
 		icon: faTrashAlt,
+		disabled: false,
 	}
 }

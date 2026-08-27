@@ -17,7 +17,7 @@ export const L3BoxRoot = styled.div<L3BoxRootProps>(({size = L3BoxSize.Medium, d
 		borderRadius: "var(--termui-radius)",
 		display: "grid",
 		gridTemplateRows: "1fr max-content",
-		opacity: disabled ? 0.24 : 1,
+		opacity: disabled ? 'var(--termui-opacity-disabled-box)' : 1,
 	}
 	switch(size) {
 		case L3BoxSize.None:

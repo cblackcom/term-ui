@@ -14,4 +14,7 @@ export const L1TextInput = styled(
 		outlineOffset: '2px',
 	},
 	padding: '0.5rem',
+	'&:disabled': {
+		opacity: 'var(--termui-opacity-disabled-control)',
+	},
 })
