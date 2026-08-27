@@ -6,6 +6,7 @@ import { TermUiColorVar } from "../../globalStyle"
 // full reload whenever their shape changes between edits.
 export enum L3BoxSize {
 	None = 'none',
+	MaxContent = 'max-content',
 	Small = 'small',
 	Medium = 'medium',
 }

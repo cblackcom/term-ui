@@ -1,16 +1,13 @@
-import { useEffect, useState } from "react"
+import styled from "@emotion/styled"
+import { keyframes } from "@emotion/react"
 
-export const L1BlinkingCursor = () => {
-	const [opacity, setOpacity] = useState(1)
-	useEffect(() => {
-		let on = true
-		const id = setInterval(() => {
-			on = !on
-			setOpacity(on ? 1 : 0)
-		}, 500)
-		return () => clearInterval(id)
-	}, [setOpacity])
-	return (
-		<span style={{opacity}}>█</span>
-	)
-}
+const blink = keyframes({
+	'50%': { opacity: 0 },
+})
+
+const Cursor = styled.span({
+	animation: `${blink} 0.75s step-end infinite`,
+})
+
+export const L1BlinkingCursor = () => <Cursor>█</Cursor>
+

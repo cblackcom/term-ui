@@ -12,6 +12,7 @@ interface L3BoxRootProps {
 
 export const L3BoxRoot = styled.div<L3BoxRootProps>(({size = L3BoxSize.Medium, disabled}) => {
 	let style: CSSObject = {
+		overflow: 'hidden',
 		boxSizing: 'border-box',
 		border: "1px solid var(--termui-color-orange)",
 		borderRadius: "var(--termui-radius)",
@@ -22,6 +23,12 @@ export const L3BoxRoot = styled.div<L3BoxRootProps>(({size = L3BoxSize.Medium, d
 	switch(size) {
 		case L3BoxSize.None:
 			return style
+		case L3BoxSize.MaxContent:
+			return {
+				...style,
+				width: 'max-content',
+				maxWidth: '100%',
+			}
 		case L3BoxSize.Small:
 			return {
 				...style,
