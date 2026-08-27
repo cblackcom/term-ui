@@ -7,17 +7,21 @@ import { L3BoxSize, L2BoxContentBackgroundColorOptions } from "./L3Box.constants
 
 interface L3BoxRootProps {
 	size?: L3BoxSize
+	disabled?: boolean
 }
 
-export const L3BoxRoot = styled.div<L3BoxRootProps>(({size = L3BoxSize.Medium}) => {
+export const L3BoxRoot = styled.div<L3BoxRootProps>(({size = L3BoxSize.Medium, disabled}) => {
 	let style: CSSObject = {
 		boxSizing: 'border-box',
 		border: "1px solid var(--termui-color-orange)",
 		borderRadius: "var(--termui-radius)",
 		display: "grid",
 		gridTemplateRows: "1fr max-content",
+		opacity: disabled ? 0.24 : 1,
 	}
 	switch(size) {
+		case L3BoxSize.None:
+			return style
 		case L3BoxSize.Small:
 			return {
 				...style,
@@ -55,12 +59,13 @@ export const L2BoxTitle = styled(
 
 interface L3FpoBoxProps {
 	size?: L3BoxRootProps["size"]
+	disabled?: L3BoxRootProps["disabled"]
 	backgroundColor?: L2BoxContentProps["backgroundColor"]
 }
 
-export const L3FpoBox = ({size, backgroundColor}: L3FpoBoxProps) => {
+export const L3FpoBox = ({size, disabled, backgroundColor}: L3FpoBoxProps) => {
 	return (
-		<L3BoxRoot size={size}>
+		<L3BoxRoot size={size} disabled={disabled}>
 			<L2BoxContent backgroundColor={backgroundColor}>
 				<div>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

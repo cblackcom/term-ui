@@ -5,10 +5,11 @@ import { TermUiColorVar } from "../../globalStyle"
 // components. Mixing in plain constants/enums makes Vite fall back to a
 // full reload whenever their shape changes between edits.
 export enum L3BoxSize {
+	None = 'none',
 	Small = 'small',
 	Medium = 'medium',
 }
 
 export const L3BoxSizeOptions = [L3BoxSize.Small, L3BoxSize.Medium] as const
 
-export const L2BoxContentBackgroundColorOptions = [TermUiColorVar.Transparent, TermUiColorVar.Orange08] as const
+export const L2BoxContentBackgroundColorOptions = [TermUiColorVar.ScreenBg, TermUiColorVar.Orange08] as const

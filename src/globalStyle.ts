@@ -27,15 +27,20 @@ export const termUiGlobalStyle: CSSObject = {
 		'--termui-color-transparent': 'transparent',
 		'--termui-color-white': 'white',
 		'--termui-color-screen-bg': '#1d1d1d',
-		'--termui-color-orange': 'rgba(253, 106, 0, 1)',
-		'--termui-color-orange08': 'rgba(253, 106, 0, 0.08)',
+		'--termui-color-orange': 'rgb(253, 106, 0)',
+		// this color was invented by using the opacity slider in xd
+		// but actually we need it to be opaque so that
+		// boxes can overlay and still be usable
+		// '--termui-color-orange08': 'rgba(253, 106, 0, 0.08)',
+		'--termui-color-orange08': 'rgb(47, 35, 27)',
 		'--termui-radius': '0.25rem',
 	},
 	'@supports (color: color(display-p3 1 1 1))': {
 		':root': {
 			'--termui-color-screen-bg': 'color(display-p3 0.114 0.114 0.114)',
 			'--termui-color-orange': 'color(display-p3 0.992 0.416 0.000)',
-			'--termui-color-orange08': 'color(display-p3 0.992 0.416 0.000 / 0.08)',
+			// '--termui-color-orange08': 'color(display-p3 0.992 0.416 0.000 / 0.08)',
+			'--termui-color-orange08': 'color(display-p3 0.184 0.138 0.105)',
 		},
 	},
 	'body, #root, #reactroot': {

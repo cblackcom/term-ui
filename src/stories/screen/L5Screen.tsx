@@ -21,5 +21,11 @@ export const L4ScreenContentStack = styled.div({
 	'& > *': {
 		// stack everything in the same cell
 		gridArea: '1 / 1',
+		// Force every stacked child into its own stacking context so DOM
+		// order always decides paint order. Without this, a child that
+		// happens to trigger a stacking context on its own (e.g. opacity
+		// < 1) paints above plain siblings regardless of DOM order --
+		// see the CSS spec's painting-order rules for stacking contexts.
+		isolation: 'isolate',
 	},
 })
