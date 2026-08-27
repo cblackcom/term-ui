@@ -7,8 +7,12 @@ const CursorContainer = styled.div({
 	top: '-0.125em',
 })
 
-export const L1Loading = () => {
+interface L1LoadingProps {
+	title?: string
+}
+
+export const L1Loading = ({title = 'LOADING'}: L1LoadingProps) => {
 	return (
-		<div>LOADING <CursorContainer><L1BlinkingCursor /></CursorContainer></div>
+		<div>{title} <CursorContainer><L1BlinkingCursor /></CursorContainer></div>
 	)
 }
