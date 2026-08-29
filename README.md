@@ -1,6 +1,6 @@
 # @cblackcom/term-ui
 
-Prototype UI component library.  License MIT.
+UI component library for prototyping.  License MIT.
 
 ---
 
@@ -10,26 +10,23 @@ Prototype UI component library.  License MIT.
 
 See "Wave" in PNDLM Design Figma account.
 
-### Development
+### Plain HTML version
+
+Currently uncommitted; for now, view source on https://static.pndlm.net for a starting point.
+
+### Setup
+
+If you install the official "Oxc" plugin under the Recommended Extensions of vscode, you will see linter errors automatically within the code editor and should not need to run the linter separately.
+
+### Component Development
 
 ```sh
-pnpm install
 pnpm storybook
-```
-
-### Build
-
-```sh
-pnpm build
 ```
 
 ### Storybook
 
-Component previews are published to GitHub Pages on every push to `development`. Locally:
-
-```sh
-pnpm build-storybook
-```
+(WIP) Component previews ~~are~~ should be published to GitHub Pages on every push to `development`, but this configuration needs to be completed when the library is in more usable shape.
 
 ### Using locally
 
@@ -46,7 +43,7 @@ In the other project's `package.json`:
 Then `pnpm install` in that project. This creates a real symlink, so imports resolve through this package's `exports` field exactly as they would post-publish — which also means `dist/` has to exist and stay up to date:
 
 ```sh
-pnpm build --watch
+pnpm watch
 ```
 
 The other project's Vite config needs `resolve.dedupe` for `react` and `react-dom`. Without it, the consuming app can end up loading two separate copies of React (its own, and the one in this repo's `node_modules`), which breaks hooks with an error like
