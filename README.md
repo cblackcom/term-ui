@@ -6,12 +6,15 @@ UI component library for prototyping. License MIT.
 
 ## Internal
 
-### Experiments in new tooling and best practices
+### Experiments in newer tooling and best practices
 
 - Install the official "Oxc" plugin under the "Recommended Extensions" of VSCode
     - Oxlint displays linter problems as red squigglies within the IDE editor
     - Oxfmt formats files on save to PNDLM specifications
-- Vite uses TS 7 to update `d.ts` files on watcher using custom `emitDeclaration` plugin in `vite.config.ts`
+- Vite uses TS 7 to update `d.ts` files on watcher using custom simple `emitDeclaration` plugin
+- [Oxc's React Compiler](https://oxc.rs/blog/2026-08-18-react-compiler-support.html) is enabled
+
+In the near future it will make sense to re-investigate Vite+ and tsdown.
 
 ### Designs
 
