@@ -1,10 +1,17 @@
 # @cblackcom/term-ui
 
-UI component library for prototyping.  License MIT.
+UI component library for prototyping. License MIT.
 
 ---
 
 ## Internal
+
+### Experiments in new tooling and best practices
+
+- Install the official "Oxc" plugin under the "Recommended Extensions" of VSCode
+    - Oxlint displays linter problems as red squigglies within the IDE editor
+    - Oxfmt formats files on save to PNDLM specifications
+- Vite uses TS 7 to update `d.ts` files on watcher using custom `emitDeclaration` plugin in `vite.config.ts`
 
 ### Designs
 
@@ -13,10 +20,6 @@ See "Wave" in PNDLM Design Figma account.
 ### Plain HTML version
 
 Currently uncommitted; for now, view source on https://static.pndlm.net for a starting point.
-
-### Setup
-
-If you install the official "Oxc" plugin under the Recommended Extensions of vscode, you will see linter errors automatically within the code editor and should not need to run the linter separately.
 
 ### Component Development
 
