@@ -1,4 +1,4 @@
-import { TermUiColorVar } from "../../globalStyle"
+import { TermUiColorVar } from '../../globalStyle'
 
 // Non-component values live in this file, separate from L3Box.tsx, because
 // React Fast Refresh can only hot-swap a module that exports *only*
@@ -13,4 +13,7 @@ export enum L3BoxSize {
 
 export const L3BoxSizeOptions = [L3BoxSize.Small, L3BoxSize.Medium] as const
 
-export const L2BoxContentBackgroundColorOptions = [TermUiColorVar.ScreenBg, TermUiColorVar.Orange08] as const
+export const L2BoxContentBackgroundColorOptions = [
+	TermUiColorVar.ScreenBg,
+	TermUiColorVar.Orange08,
+] as const

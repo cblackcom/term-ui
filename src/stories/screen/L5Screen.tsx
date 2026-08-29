@@ -1,4 +1,4 @@
-import styled from "@emotion/styled"
+import styled from '@emotion/styled'
 
 // container of this component should be 100vw/100vh, no margin or padding
 // see also: #root in globalStyle

@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from "@storybook/react-vite"
-import { L3LoginBox as Component } from "./L3LoginBox"
-import { L3LoadingModal } from "../box/L3LoadingModal"
-import { L4ScreenContentStack } from "../screen/L5Screen"
+import type { Meta, StoryObj } from '@storybook/react-vite'
+import { L3LoginBox as Component } from './L3LoginBox'
+import { L3LoadingModal } from '../box/L3LoadingModal'
+import { L4ScreenContentStack } from '../screen/L5Screen'
 
 const meta: Meta<typeof Component> = {
-	title: "Components/Login/L3LoginBox",
+	title: 'Components/Login/L3LoginBox',
 	component: Component,
 }
 
@@ -22,6 +22,6 @@ export const LoggingIn: StoryObj<typeof meta> = {
 				<Story />
 				<L3LoadingModal title="LOGGING IN" />
 			</L4ScreenContentStack>
-		)
-	]
+		),
+	],
 }

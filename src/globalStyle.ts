@@ -1,4 +1,4 @@
-import { type CSSObject } from "@emotion/react"
+import { type CSSObject } from '@emotion/react'
 
 export enum TermUiBreakpoint {
 	TabletMinWidth = '720px',
@@ -58,15 +58,15 @@ export const termUiGlobalStyle: CSSObject = {
 		fontFamily: '"IBM Plex Mono", monospace',
 		fontWeight: 400,
 		fontStyle: 'normal',
-		fontSize: `${14/16}rem`,
+		fontSize: `${14 / 16}rem`,
 	},
-	'input': {
+	input: {
 		fontFamily: '"IBM Plex Mono", monospace',
 		fontWeight: 500,
 		fontStyle: 'normal',
-		fontSize: `${14/16}rem`,
+		fontSize: `${14 / 16}rem`,
 	},
-	'a': {
+	a: {
 		color: 'inherit',
 		fontWeight: 'bold',
 		fontStyle: 'italic',

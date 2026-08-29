@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from "@storybook/react-vite"
-import { L1Loading as Component } from "./L1Loading"
+import type { Meta, StoryObj } from '@storybook/react-vite'
+import { L1Loading as Component } from './L1Loading'
 
 const meta: Meta<typeof Component> = {
-	title: "Components/Misc/L1Loading",
+	title: 'Components/Misc/L1Loading',
 	component: Component,
 }
 

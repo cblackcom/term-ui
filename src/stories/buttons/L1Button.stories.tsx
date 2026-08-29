@@ -1,11 +1,11 @@
-import type { Meta, StoryObj } from "@storybook/react-vite"
-import { L1Button as Component } from "./L1Button"
-import { faPlus } from "@fortawesome/free-solid-svg-icons"
-import { faTrashAlt } from "@fortawesome/free-regular-svg-icons"
-import { L1ButtonSize } from "./L1ButtonSize"
+import type { Meta, StoryObj } from '@storybook/react-vite'
+import { L1Button as Component } from './L1Button'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faTrashAlt } from '@fortawesome/free-regular-svg-icons'
+import { L1ButtonSize } from './L1ButtonSize'
 
 const meta: Meta<typeof Component> = {
-	title: "Components/Buttons/L1Button",
+	title: 'Components/Buttons/L1Button',
 	component: Component,
 	argTypes: {
 		size: {
@@ -13,7 +13,6 @@ const meta: Meta<typeof Component> = {
 			options: Object.values(L1ButtonSize),
 		},
 	},
-
 }
 
 export default meta
@@ -47,7 +46,7 @@ export const TrashIcon: StoryObj<typeof meta> = {
 	args: {
 		icon: faTrashAlt,
 		disabled: false,
-	}
+	},
 }
 
 export const MinSmallTrashIcon: StoryObj<typeof meta> = {
@@ -55,5 +54,5 @@ export const MinSmallTrashIcon: StoryObj<typeof meta> = {
 		size: L1ButtonSize.MinSmall,
 		icon: faTrashAlt,
 		disabled: false,
-	}
+	},
 }

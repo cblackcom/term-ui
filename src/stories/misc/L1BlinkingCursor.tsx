@@ -1,5 +1,5 @@
-import styled from "@emotion/styled"
-import { keyframes } from "@emotion/react"
+import styled from '@emotion/styled'
+import { keyframes } from '@emotion/react'
 
 const blink = keyframes({
 	'50%': { opacity: 0 },
@@ -10,4 +10,3 @@ const Cursor = styled.span({
 })
 
 export const L1BlinkingCursor = () => <Cursor>█</Cursor>
-

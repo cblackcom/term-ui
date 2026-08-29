@@ -1,10 +1,10 @@
-import { resolve } from "node:path"
-import { execSync } from "node:child_process"
-import { defineConfig, type Plugin } from "vite"
-import react from "@vitejs/plugin-react"
+import { resolve } from 'node:path'
+import { execSync } from 'node:child_process'
+import { defineConfig, type Plugin } from 'vite'
+import react from '@vitejs/plugin-react'
 
 const emitDeclarations = (): Plugin => ({
-	name: "emit-declarations",
+	name: 'emit-declarations',
 	// closeBundle() fires after every build, including each rebuild in
 	// `vite build --watch`, so this keeps dist/*.d.ts in sync without needing
 	// a separate build step.
@@ -13,12 +13,12 @@ const emitDeclarations = (): Plugin => ({
 	// incremental tsc cache from what's actually still on disk and cause it to
 	// skip re-emitting files it wrongly believes are already there.
 	closeBundle() {
-		console.log("\n[emit-declarations] generating type declarations...")
+		console.log(`\n[emit-declarations] generating type declarations...`)
 		const start = Date.now()
 		try {
-			execSync("tsc -p tsconfig.emit.json", { stdio: "inherit" })
+			execSync('tsc -p tsconfig.emit.json', { stdio: 'inherit' })
 		} catch (error) {
-			console.error("[emit-declarations] failed to generate type declarations")
+			console.error('[emit-declarations] failed to generate type declarations')
 			// In watch mode, keep the watcher alive so it can recover on the next save
 			// instead of dying on every type error. A one-shot build should still fail
 			// the process so CI catches it.
@@ -33,7 +33,7 @@ const emitDeclarations = (): Plugin => ({
 
 export default defineConfig({
 	define: {
-		φ: ((1 + Math.sqrt(5)) / 2),
+		φ: (1 + Math.sqrt(5)) / 2,
 	},
 	plugins: [
 		react({
@@ -44,18 +44,18 @@ export default defineConfig({
 	],
 	build: {
 		lib: {
-			entry: resolve(import.meta.dirname, "src/index.ts"),
-			name: "@cblackcom/term2026",
-			fileName: "index",
-			formats: ["es"],
+			entry: resolve(import.meta.dirname, 'src/index.ts'),
+			name: '@cblackcom/term-ui',
+			fileName: 'index',
+			formats: ['es'],
 		},
 		rollupOptions: {
 			external: [
-				"react",
-				"react-dom",
-				"react/jsx-runtime",
-				"@emotion/react",
-				"@emotion/styled",
+				'react',
+				'react-dom',
+				'react/jsx-runtime',
+				'@emotion/react',
+				'@emotion/styled',
 			],
 		},
 		sourcemap: true,

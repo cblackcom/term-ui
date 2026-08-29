@@ -1,5 +1,5 @@
-import styled from "@emotion/styled"
-import { L1BlinkingCursor } from "./L1BlinkingCursor"
+import styled from '@emotion/styled'
+import { L1BlinkingCursor } from './L1BlinkingCursor'
 
 const CursorContainer = styled.div({
 	display: 'inline-block',
@@ -11,8 +11,13 @@ interface L1LoadingProps {
 	title?: string
 }
 
-export const L1Loading = ({title = 'LOADING'}: L1LoadingProps) => {
+export const L1Loading = ({ title = 'LOADING' }: L1LoadingProps) => {
 	return (
-		<div>{title} <CursorContainer><L1BlinkingCursor /></CursorContainer></div>
+		<div>
+			{title + '\u00A0'}
+			<CursorContainer>
+				<L1BlinkingCursor />
+			</CursorContainer>
+		</div>
 	)
 }

@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from "@storybook/react-vite"
-import { L3FpoBox as Component } from "./L3Box"
-import { L2BoxContentBackgroundColorOptions, L3BoxSize } from "./L3Box.constants"
-import { TermUiColorVar } from "../../globalStyle"
+import type { Meta, StoryObj } from '@storybook/react-vite'
+import { L3FpoBox as Component } from './L3Box'
+import { L2BoxContentBackgroundColorOptions, L3BoxSize } from './L3Box.constants'
+import { TermUiColorVar } from '../../globalStyle'
 
 const meta: Meta<typeof Component> = {
-	title: "Components/Box/L3FpoBox",
+	title: 'Components/Box/L3FpoBox',
 	component: Component,
 	argTypes: {
 		size: {

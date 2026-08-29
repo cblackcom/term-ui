@@ -1,11 +1,11 @@
-import { useId } from "react"
-import styled from "@emotion/styled"
-import { L2BoxContent, L2BoxTitle, L3BoxRoot } from "../box/L3Box"
-import { L1LogoPNDLM } from "../misc/L1Logos"
-import { L1TextInput } from "../inputs/L1TextInput"
-import { L1Button } from "../buttons/L1Button"
-import { L3BoxSize } from "../box/L3Box.constants"
-import { L2BoxBottomButtonRow } from "../box/L2BoxButtonRow"
+import { useId } from 'react'
+import styled from '@emotion/styled'
+import { L2BoxContent, L2BoxTitle, L3BoxRoot } from '../box/L3Box'
+import { L1LogoPNDLM } from '../misc/L1Logos'
+import { L1TextInput } from '../inputs/L1TextInput'
+import { L1Button } from '../buttons/L1Button'
+import { L3BoxSize } from '../box/L3Box.constants'
+import { L2BoxBottomButtonRow } from '../box/L2BoxButtonRow'
 
 const LoginBoxContent = styled(L2BoxContent)({
 	rowGap: '1.5rem',
@@ -23,7 +23,7 @@ const Fields = styled.div({
 	display: 'grid',
 	gridTemplateColumns: `1fr ${φ}fr`,
 	gap: '0.5rem 1rem',
-	'label': {
+	label: {
 		justifySelf: 'right',
 		alignSelf: 'center',
 	},
@@ -41,7 +41,17 @@ interface L3LoginBoxProps {
 	onTotpCodeChange: React.ChangeEventHandler<HTMLInputElement>
 }
 
-export const L3LoginBox = ({ref, disabled, username, password, totpCode, onUsernameChange, onPasswordChange, onTotpCodeChange, onSubmitClick}: L3LoginBoxProps) => {
+export const L3LoginBox = ({
+	ref,
+	disabled,
+	username,
+	password,
+	totpCode,
+	onUsernameChange,
+	onPasswordChange,
+	onTotpCodeChange,
+	onSubmitClick,
+}: L3LoginBoxProps) => {
 	const usernameId = useId()
 	const passwordId = useId()
 	const totpCodeId = useId()

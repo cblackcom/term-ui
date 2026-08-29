@@ -1,10 +1,10 @@
-import styled from "@emotion/styled"
-import type { InputHTMLAttributes } from "react"
-import { TermUiColorVar } from "../../globalStyle"
+import styled from '@emotion/styled'
+import type { InputHTMLAttributes } from 'react'
+import { TermUiColorVar } from '../../globalStyle'
 
-export const L1TextInput = styled(
-	(props: InputHTMLAttributes<HTMLInputElement>) => <input type="text" {...props} />
-)({
+export const L1TextInput = styled((props: InputHTMLAttributes<HTMLInputElement>) => (
+	<input type="text" {...props} />
+))({
 	backgroundColor: TermUiColorVar.ScreenBg,
 	color: TermUiColorVar.White,
 	border: `1px solid ${TermUiColorVar.Orange}`,
