@@ -21,6 +21,7 @@
 		"typecheck": "tsc -b",
 		"build": "tsc -b && vite build",
 		"watch": "vite build --watch",
+		"lint": "oxlint",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build"
 	},
@@ -39,6 +40,8 @@
 		"@types/react": "^19.2.18",
 		"@types/react-dom": "^19.2.5",
 		"@vitejs/plugin-react": "^6.1.0",
+		"oxlint": "^1.80.0",
+		"oxlint-tsgolint": "^7.0.2001",
 		"react": "^19.2.8",
 		"react-dom": "^19.2.8",
 		"storybook": "^10.5.10",

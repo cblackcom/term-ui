@@ -10,6 +10,8 @@ interface L3BoxRootProps {
 	disabled?: boolean
 }
 
+// this is a component that the rule is not picking up on
+// oxlint-disable-next-line react/only-export-components
 export const L3BoxRoot = styled.div<L3BoxRootProps>(({size = L3BoxSize.Medium, disabled}) => {
 	let style: CSSObject = {
 		overflow: 'hidden',
@@ -46,6 +48,8 @@ interface L2BoxContentProps {
 	backgroundColor?: typeof L2BoxContentBackgroundColorOptions[number]
 }
 
+// this is a component that the rule is not picking up on
+// oxlint-disable-next-line react/only-export-components
 export const L2BoxContent = styled.div<L2BoxContentProps>(({backgroundColor = TermUiColorVar.Orange08}) => ({
 	backgroundColor,
 	padding: '1rem 1rem 1.5rem',
@@ -54,8 +58,10 @@ export const L2BoxContent = styled.div<L2BoxContentProps>(({backgroundColor = Te
 	rowGap: '1rem',
 }))
 
+// this is a component that the rule is not picking up on
+// oxlint-disable-next-line react/only-export-components
 export const L2BoxTitle = styled(
-	({children = "\u00A0", ...props}: HTMLAttributes<HTMLDivElement>) => <div children={children} {...props} />
+	({children = "\u00A0", ...props}: HTMLAttributes<HTMLDivElement>) => <div {...props}>{children}</div>
 )({
 	backgroundColor: TermUiColorVar.Orange,
 	color: TermUiColorVar.ScreenBg,

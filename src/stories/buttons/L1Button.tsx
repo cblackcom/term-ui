@@ -4,11 +4,7 @@ import type { IconProp } from "@fortawesome/fontawesome-svg-core"
 import type { ButtonHTMLAttributes } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { TermUiColorVar } from "../../globalStyle"
-
-export enum L1ButtonSize {
-	None = 'none',
-	MinSmall = 'minSmall',
-}
+import { L1ButtonSize } from "./L1ButtonSize"
 
 const Button = styled(L1UnstyledButton)<{size: L1ButtonSize}>(({size}) => ({
 	border: `1px solid ${TermUiColorVar.Orange}`,

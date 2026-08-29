@@ -30,6 +30,7 @@ const Fields = styled.div({
 })
 
 interface L3LoginBoxProps {
+	ref?: React.Ref<HTMLDivElement>
 	disabled?: boolean
 	username: string
 	password: string
@@ -40,12 +41,12 @@ interface L3LoginBoxProps {
 	onTotpCodeChange: React.ChangeEventHandler<HTMLInputElement>
 }
 
-export const L3LoginBox = ({disabled, username, password, totpCode, onUsernameChange, onPasswordChange, onTotpCodeChange, onSubmitClick}: L3LoginBoxProps) => {
+export const L3LoginBox = ({ref, disabled, username, password, totpCode, onUsernameChange, onPasswordChange, onTotpCodeChange, onSubmitClick}: L3LoginBoxProps) => {
 	const usernameId = useId()
 	const passwordId = useId()
 	const totpCodeId = useId()
 	return (
-		<L3BoxRoot size={L3BoxSize.Small} disabled={disabled}>
+		<L3BoxRoot ref={ref} size={L3BoxSize.Small} disabled={disabled}>
 			<LoginBoxContent>
 				<LoginLogo />
 				<Fields>

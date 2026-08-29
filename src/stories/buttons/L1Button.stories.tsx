@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import { L1Button as Component, L1ButtonSize } from "./L1Button"
+import { L1Button as Component } from "./L1Button"
 import { faPlus } from "@fortawesome/free-solid-svg-icons"
 import { faTrashAlt } from "@fortawesome/free-regular-svg-icons"
+import { L1ButtonSize } from "./L1ButtonSize"
 
 const meta: Meta<typeof Component> = {
 	title: "Components/Buttons/L1Button",

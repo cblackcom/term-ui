@@ -12,11 +12,11 @@ export const useActionKeys = <T extends HTMLElement = HTMLElement>({onEscape, on
 		if (e.key === "Escape") {
 			onEscape?.(e)
 		}
-	}, [])
+	}, [onEscape])
 	useEffect(() => {
 		document.addEventListener("keydown", onGlobalKeyDown)
 		return () => document.removeEventListener("keydown", onGlobalKeyDown)
-	}, [])
+	}, [onGlobalKeyDown])
 	// start capturing spacial key events from the element
 	// that gets this ref
 	const ref = useRef<T>(null)
