@@ -36,7 +36,10 @@ export default defineConfig({
 		φ: ((1 + Math.sqrt(5)) / 2),
 	},
 	plugins: [
-		react(),
+		react({
+			// https://oxc.rs/blog/2026-08-18-react-compiler-support.html
+			compiler: true,
+		}),
 		emitDeclarations(),
 	],
 	build: {
