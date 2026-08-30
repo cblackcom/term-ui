@@ -4,6 +4,21 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    oxfmt:
+      specifier: ^0.65.0
+      version: 0.65.0
+    oxlint:
+      specifier: ^1.80.0
+      version: 1.80.0
+    oxlint-tsgolint:
+      specifier: ^7.0.2001
+      version: 7.0.2001
+    typescript:
+      specifier: ^7.0.2
+      version: 7.0.2
+
 importers:
 
   .:
@@ -49,13 +64,13 @@ importers:
         specifier: ^0.147.0
         version: 0.147.0
       oxfmt:
-        specifier: ^0.65.0
+        specifier: 'catalog:'
         version: 0.65.0
       oxlint:
-        specifier: ^1.80.0
+        specifier: 'catalog:'
         version: 1.80.0(oxlint-tsgolint@7.0.2001)
       oxlint-tsgolint:
-        specifier: ^7.0.2001
+        specifier: 'catalog:'
         version: 7.0.2001
       react:
         specifier: ^19.2.8
@@ -67,7 +82,7 @@ importers:
         specifier: ^10.5.10
         version: 10.5.10(@types/react@19.2.18)(react@19.2.8)
       typescript:
-        specifier: ^7.0.2
+        specifier: 'catalog:'
         version: 7.0.2
       vite:
         specifier: ^8.2.2

@@ -1,0 +1,12 @@
+# it seems best practice to install oxlint/oxfmt packages scripts and config
+# in the root package (if that would be separate from one or more javascript
+# packages off in their own subdirectories)
+# and in fact oxlint's type stuff errors out unless it's configured in the
+# root exclusively
+# see wave2026 project for example split
+
+catalog:
+    oxfmt: ^0.65.0
+    oxlint: ^1.80.0
+    oxlint-tsgolint: ^7.0.2001
+    typescript: ^7.0.2
