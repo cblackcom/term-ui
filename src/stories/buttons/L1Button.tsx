@@ -25,14 +25,13 @@ const Button = styled(L1UnstyledButton)<{ size: L1ButtonSize }>(({ size }) => ({
 
 export interface L1ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	size?: L1ButtonSize
-	title?: string
 	icon?: IconProp
 }
 
-export const L1Button = ({ size, title, icon, children, ...props }: L1ButtonProps) => {
+export const L1Button = ({ size, icon, children, ...props }: L1ButtonProps) => {
 	// default sizes
 	if (size === undefined) {
-		if (icon && !title && !children) {
+		if (icon && !children) {
 			size = L1ButtonSize.None
 		} else {
 			size = L1ButtonSize.MinSmall
@@ -41,7 +40,6 @@ export const L1Button = ({ size, title, icon, children, ...props }: L1ButtonProp
 	return (
 		<Button size={size} {...props}>
 			{icon ? <FontAwesomeIcon icon={icon} /> : null}
-			{title}
 			{children}
 		</Button>
 	)

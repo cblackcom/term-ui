@@ -93,7 +93,7 @@ export const L3FpoBox = ({ size, disabled, backgroundColor }: L3FpoBoxProps) => 
 					convallis nisi.
 				</div>
 				<L2BoxBottomButtonRow>
-					<L1Button title="OK" />
+					<L1Button>OK</L1Button>
 				</L2BoxBottomButtonRow>
 			</L2BoxContent>
 			<L2BoxTitle>LOREM IPSUM</L2BoxTitle>

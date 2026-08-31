@@ -12,6 +12,9 @@ const meta: Meta<typeof Component> = {
 			control: 'select',
 			options: Object.values(L1ButtonSize),
 		},
+		children: {
+			control: 'text',
+		},
 	},
 }
 
@@ -19,7 +22,7 @@ export default meta
 
 export const Add: StoryObj<typeof meta> = {
 	args: {
-		title: 'ADD',
+		children: 'ADD',
 		icon: faPlus,
 		disabled: false,
 	},
@@ -28,7 +31,7 @@ export const Add: StoryObj<typeof meta> = {
 export const NoSizeAdd: StoryObj<typeof meta> = {
 	args: {
 		size: L1ButtonSize.None,
-		title: 'ADD',
+		children: 'ADD',
 		icon: faPlus,
 		disabled: false,
 	},
@@ -36,7 +39,7 @@ export const NoSizeAdd: StoryObj<typeof meta> = {
 
 export const DisabledAdd: StoryObj<typeof meta> = {
 	args: {
-		title: 'ADD',
+		children: 'ADD',
 		icon: faPlus,
 		disabled: true,
 	},
