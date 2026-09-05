@@ -38,7 +38,7 @@ export default defineConfig({
 	plugins: [
 		react({
 			// https://oxc.rs/blog/2026-08-18-react-compiler-support.html
-			compiler: true,
+			// compiler: true,
 		}),
 		emitDeclarations(),
 	],

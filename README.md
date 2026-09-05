@@ -12,7 +12,10 @@ UI component library for prototyping. License MIT.
     - Oxlint displays linter problems as red squigglies within the IDE editor
     - Oxfmt formats files on save to PNDLM specifications
 - Vite uses TS 7 to update `d.ts` files on watcher using custom simple `emitDeclaration` plugin
-- [Oxc's React Compiler](https://oxc.rs/blog/2026-08-18-react-compiler-support.html) is enabled
+
+### Experiments TODO
+
+- [Oxc's React Compiler](https://oxc.rs/blog/2026-08-18-react-compiler-support.html) is ~~enabled~~ disabled in `vite.config.ts` because it appears to activate rolldown and something about it is not working. To readdress later. It _does_ work on projects that consume this library.
 
 In the near future it will make sense to re-investigate Vite+ and tsdown.
 

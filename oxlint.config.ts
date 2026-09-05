@@ -3,6 +3,8 @@ import { defineConfig } from 'oxlint'
 export default defineConfig({
 	plugins: ['react', 'typescript', 'oxc'],
 	options: {
+		// oxlint will error out if type options are present
+		// anywhere other than the root package
 		typeAware: true,
 		typeCheck: true,
 	},
