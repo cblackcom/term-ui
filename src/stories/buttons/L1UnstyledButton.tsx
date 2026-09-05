@@ -6,7 +6,8 @@ export const L1UnstyledButton = styled.button({
 	border: 'none',
 	padding: 0,
 	margin: 0,
-	font: 'inherit',
+	// now specified by globalStyle
+	// font: 'inherit',
 	color: 'inherit',
 	cursor: 'pointer',
 	'&:disabled': {

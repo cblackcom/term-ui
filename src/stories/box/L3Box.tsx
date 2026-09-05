@@ -1,6 +1,6 @@
 import styled, { type CSSObject } from '@emotion/styled'
 import type { HTMLAttributes } from 'react'
-import { TermUiColorVar } from '../../globalStyle'
+import { TermUiColorVar, TermUiFont } from '../../globalStyle'
 import { L1Button } from '../buttons/L1Button'
 import { L2BoxBottomButtonRow } from './L2BoxButtonRow'
 import { L3BoxSize, L2BoxContentBackgroundColorOptions } from './L3Box.constants'
@@ -69,8 +69,8 @@ export const L2BoxTitle = styled(
 )({
 	backgroundColor: TermUiColorVar.Orange,
 	color: TermUiColorVar.ScreenBg,
+	...TermUiFont.MediumNormal,
 	fontSize: `${14 / 16}rem`,
-	fontWeight: 500,
 	padding: '0.25rem 0.5rem 1px',
 })
 

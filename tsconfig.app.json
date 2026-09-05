@@ -23,5 +23,5 @@
 		"erasableSyntaxOnly": false, // react-ts template default true
 		"noFallthroughCasesInSwitch": true
 	},
-	"include": ["src"]
+	"include": ["src", ".storybook"]
 }

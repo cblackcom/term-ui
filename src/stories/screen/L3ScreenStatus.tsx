@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { TermUiBreakpoint, TermUiColorVar } from '../../globalStyle'
+import { TermUiBreakpoint, TermUiColorVar, TermUiFont } from '../../globalStyle'
 import type { ReactNode } from 'react'
 
 const L3ScreenStatusRoot = styled.div({
@@ -12,8 +12,8 @@ const L3ScreenStatusRoot = styled.div({
 	[`@media (min-width: ${TermUiBreakpoint.TabletMinWidth})`]: {
 		padding: '1rem 2rem',
 	},
+	...TermUiFont.MediumNormal,
 	fontSize: '1rem',
-	fontWeight: 500,
 	// maintain same height as if L1ScreenStatusLogoCBlack were present
 	boxSizing: 'content-box',
 	minHeight: '22px',

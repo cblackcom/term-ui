@@ -4,6 +4,20 @@ export enum TermUiBreakpoint {
 	TabletMinWidth = '720px',
 }
 
+export const TermUiFont = {
+	RegularNormal: {
+		fontFamily: '"IBM Plex Mono", monospace',
+		fontWeight: 400,
+		fontStyle: 'normal',
+	},
+	MediumNormal: {
+		fontFamily: '"IBM Plex Mono", monospace',
+		fontWeight: 500,
+		fontStyle: 'normal',
+	},
+	BoldItalic: { fontFamily: '"IBM Plex Mono", monospace', fontWeight: 700, fontStyle: 'italic' },
+} as const satisfies Record<string, CSSObject>
+
 export enum TermUiColorVar {
 	Transparent = 'var(--termui-color-transparent)',
 	White = 'var(--termui-color-white)',
@@ -57,23 +71,21 @@ export const termUiGlobalStyle: CSSObject = {
 	},
 	'body > *': {
 		color: 'var(--termui-color-orange)',
-		fontFamily: '"IBM Plex Mono", monospace',
-		fontWeight: 400,
-		fontStyle: 'normal',
+		...TermUiFont.RegularNormal,
 		fontSize: `${14 / 16}rem`,
 	},
-	input: {
-		fontFamily: '"IBM Plex Mono", monospace',
-		fontWeight: 500,
-		fontStyle: 'normal',
+	'input,button': {
+		...TermUiFont.MediumNormal,
 		fontSize: `${14 / 16}rem`,
 	},
 	a: {
 		color: 'inherit',
-		fontWeight: 'bold',
-		fontStyle: 'italic',
+		...TermUiFont.BoldItalic,
 		'&:hover': {
 			textDecoration: 'none',
 		},
+	},
+	'h1,h2,h3,h4,h5,h6': {
+		...TermUiFont.BoldItalic,
 	},
 }

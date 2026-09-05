@@ -3,14 +3,14 @@ import { L1UnstyledButton } from './L1UnstyledButton'
 import type { IconProp } from '@fortawesome/fontawesome-svg-core'
 import type { ButtonHTMLAttributes } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { TermUiColorVar } from '../../globalStyle'
+import { TermUiColorVar, TermUiFont } from '../../globalStyle'
 import { L1ButtonSize } from './L1ButtonSize'
 
 const Button = styled(L1UnstyledButton)<{ size: L1ButtonSize }>(({ size }) => ({
 	border: `1px solid ${TermUiColorVar.Orange}`,
 	borderRadius: 'var(--termui-radius)',
+	...TermUiFont.MediumNormal,
 	fontSize: `${14 / 16}rem`,
-	fontWeight: 500,
 	minWidth: size === L1ButtonSize.MinSmall ? '8rem' : 'auto',
 	padding: '0.5rem',
 	display: 'inline-flex',

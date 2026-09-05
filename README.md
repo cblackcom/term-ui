@@ -4,6 +4,24 @@ UI component library for prototyping. License MIT.
 
 ---
 
+## Usage
+
+### Font
+
+Components are styled for IBM Plex Mono, but the font itself isn't bundled or
+pulled in automatically — `@fontsource/ibm-plex-mono` is only a devDependency
+here (used for Storybook previews), so without it the `monospace` fallback in
+the `font-family` stack renders instead. Consuming projects need to install it
+and import the same weights/styles as [`.storybook/preview.tsx`](.storybook/preview.tsx)
+does — check there for the current list, since it may grow as new weights or
+styles get used.
+
+```sh
+pnpm add @fontsource/ibm-plex-mono
+```
+
+---
+
 ## Internal
 
 ### Experiments in newer tooling and best practices
@@ -45,7 +63,7 @@ In the other project's `package.json`:
 
 ```jsonc
 "dependencies": {
-	"@cblackcom/term-ui": "link:/absolute/path/to/term-ui"
+	"@cblackcom/term-ui": "link:../relative/path/to/term-ui"
 }
 ```
 
