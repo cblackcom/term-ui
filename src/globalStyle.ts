@@ -1,5 +1,20 @@
 import { type CSSObject } from '@emotion/react'
 
+// normally a component library would not force the import of font files
+// but this library is for a pretty specific and narrow use case.
+// would rather not accidentally forget them in consuming projects...
+// separately, we reviewed subsetting to latin-only files here;
+// savings were negligible (~700 bytes gzip'd total, since unicode-range
+// already lazy-loads only the subsets actually used) so we're keeping
+// the plain per-weight imports.
+// include 400/700 normal/italic to cover uses of <b>, <strong>, <i>
+// in markdown documents.
+import '@fontsource/ibm-plex-mono/400.css'
+import '@fontsource/ibm-plex-mono/400-italic.css'
+import '@fontsource/ibm-plex-mono/500.css'
+import '@fontsource/ibm-plex-mono/700.css'
+import '@fontsource/ibm-plex-mono/700-italic.css'
+
 export enum TermUiBreakpoint {
 	TabletMinWidth = '720px',
 }

@@ -50,13 +50,23 @@ export default defineConfig({
 			formats: ['es'],
 		},
 		rollupOptions: {
-			external: [
-				'react',
-				'react-dom',
-				'react/jsx-runtime',
-				'@emotion/react',
-				'@emotion/styled',
-			],
+			external: (id) => {
+				if (['react', 'react-dom', 'react/jsx-runtime', '@emotion/react', '@emotion/styled'].includes(id)) {
+					return true
+				}
+				// Library-mode builds otherwise inline every asset referenced from CSS
+				// (the font files globalStyle.ts imports) as base64 data URIs regardless
+				// of size (build.assetsInlineLimit has no effect here), which defeats
+				// @font-face unicode-range's normal lazy-fetch behavior and bloats
+				// dist/index.css to 500+ KB. Externalizing by prefix (rather than listing
+				// each weight file, which would duplicate globalStyle.ts's own import
+				// list) leaves these imports untouched in dist/index.js so the consumer's
+				// own bundler resolves and serves them normally. Scoped to this vendor
+				// package specifically (not just any *.css) so a future local stylesheet
+				// authored in src/ would still get bundled/copied normally rather than
+				// left as a dangling relative import.
+				return id.startsWith('@fontsource/')
+			},
 		},
 		sourcemap: true,
 	},

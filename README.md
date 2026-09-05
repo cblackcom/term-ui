@@ -8,17 +8,17 @@ UI component library for prototyping. License MIT.
 
 ### Font
 
-Components are styled for IBM Plex Mono, but the font itself isn't bundled or
-pulled in automatically — `@fontsource/ibm-plex-mono` is only a devDependency
-here (used for Storybook previews), so without it the `monospace` fallback in
-the `font-family` stack renders instead. Consuming projects need to install it
-and import the same weights/styles as [`.storybook/preview.tsx`](.storybook/preview.tsx)
-does — check there for the current list, since it may grow as new weights or
-styles get used.
+Components are styled for IBM Plex Mono, and it's included automatically —
+`@fontsource/ibm-plex-mono` is a real `dependency` of this package, and
+[`src/globalStyle.ts`](src/globalStyle.ts) imports the weights/styles actually
+used (check there for the current list, since it may grow) as a side effect.
+Importing anything from `@cblackcom/term-ui` pulls this in, so no extra install
+or import step is needed in consuming projects.
 
-```sh
-pnpm add @fontsource/ibm-plex-mono
-```
+Those font imports are externalized in `vite.config.ts`'s `rollupOptions`
+rather than bundled into `dist/index.js` — the consumer's own bundler resolves
+and serves them normally, which keeps `@font-face`'s unicode-range lazy-loading
+intact and avoids inlining the font files into this package's own build output.
 
 ---
 
