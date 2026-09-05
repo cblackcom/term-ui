@@ -10,6 +10,7 @@ export enum TermUiColorVar {
 	ScreenBg = 'var(--termui-color-screen-bg)',
 	Orange = 'var(--termui-color-orange)',
 	Orange08 = 'var(--termui-color-orange08)',
+	Orange08T = 'var(--termui-color-orange08t)',
 }
 
 // TermUiRawHexColor mirrors the :root values below as plain hex, for
@@ -29,10 +30,11 @@ export const termUiGlobalStyle: CSSObject = {
 		'--termui-color-screen-bg': '#1d1d1d',
 		'--termui-color-orange': 'rgb(253, 106, 0)',
 		// this color was invented by using the opacity slider in xd
-		// but actually we need it to be opaque so that
-		// boxes can overlay and still be usable
-		// '--termui-color-orange08': 'rgba(253, 106, 0, 0.08)',
+		// but actually we need the default version of it to be opaque
+		// so that boxes can overlay and still be usable
 		'--termui-color-orange08': 'rgb(47, 35, 27)',
+		// this is the actual transparent version of the preceeding
+		'--termui-color-orange08t': 'rgba(253, 106, 0, 0.08)',
 		'--termui-radius': '0.25rem',
 		'--termui-opacity-disabled-box': 0.24,
 		'--termui-opacity-disabled-control': 0.4,
@@ -41,8 +43,8 @@ export const termUiGlobalStyle: CSSObject = {
 		':root': {
 			'--termui-color-screen-bg': 'color(display-p3 0.114 0.114 0.114)',
 			'--termui-color-orange': 'color(display-p3 0.992 0.416 0.000)',
-			// '--termui-color-orange08': 'color(display-p3 0.992 0.416 0.000 / 0.08)',
 			'--termui-color-orange08': 'color(display-p3 0.184 0.138 0.105)',
+			'--termui-color-orange08t': 'color(display-p3 0.992 0.416 0.000 / 0.08)',
 		},
 	},
 	'body, #root, #reactroot': {

@@ -21,6 +21,9 @@ const Button = styled(L1UnstyledButton)<{ size: L1ButtonSize }>(({ size }) => ({
 	'&:disabled': {
 		opacity: 'var(--termui-opacity-disabled-control)',
 	},
+	'&:hover': {
+		backgroundColor: TermUiColorVar.Orange08T,
+	},
 }))
 
 export interface L1ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

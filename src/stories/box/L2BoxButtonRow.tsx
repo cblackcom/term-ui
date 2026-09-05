@@ -4,12 +4,12 @@ export const L2BoxTopButtonRow = styled.div({
 	display: 'flex',
 	flexDirection: 'row',
 	justifyContent: 'flex-end',
-	columnGap: '1rem',
+	columnGap: '0.5rem',
 })
 
 export const L2BoxBottomButtonRow = styled.div({
 	display: 'flex',
 	flexDirection: 'row',
 	justifyContent: 'center',
-	columnGap: '1rem',
+	columnGap: '0.5rem',
 })
