@@ -88,4 +88,13 @@ export const termUiGlobalStyle: CSSObject = {
 	'h1,h2,h3,h4,h5,h6': {
 		...TermUiFont.BoldItalic,
 	},
+	h1: {
+		fontSize: '2rem',
+	},
+	h2: {
+		fontSize: '1.33rem',
+	},
+	h3: {
+		fontSize: '1.17rem',
+	},
 }

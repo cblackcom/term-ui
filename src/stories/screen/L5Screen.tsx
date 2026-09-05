@@ -29,3 +29,10 @@ export const L4ScreenContentStack = styled.div({
 		isolation: 'isolate',
 	},
 })
+
+// alternate candidate for first grid space
+// for displaying a scrollable page of unboxed content
+export const L4ScreenContentScroll = styled.div({
+	padding: '1rem 2rem',
+	overflow: 'auto',
+})
